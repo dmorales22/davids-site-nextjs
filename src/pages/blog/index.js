@@ -10,7 +10,7 @@ export default function Index() {
             My Blog :)
           </h2>
           <p className="mt-6 text-md md:text-lg text-center leading-8 text-white px-4 sm:px-4 md:px-8 lg:px-12">
-            Todo
+            This page is under construction 🚧
           </p>
         </div>
       </div>

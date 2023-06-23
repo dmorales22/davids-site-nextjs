@@ -13,7 +13,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <p className="text-xl">&gt;_</p>
+              <Link href="/" className="text-xl">
+                &gt;_
+              </Link>
             </div>
             <div className="ml-10 flex space-x-4">
               <div className="ml-10 flex items-baseline space-x-4 hidden md:block">
@@ -126,7 +128,7 @@ const Navbar = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            href="#"
+                            href="services"
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900"
@@ -141,7 +143,7 @@ const Navbar = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            href="#"
+                            href="contact"
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900"
@@ -156,7 +158,7 @@ const Navbar = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            href="#"
+                            href="blog"
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900"
