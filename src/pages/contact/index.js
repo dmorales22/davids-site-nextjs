@@ -37,6 +37,10 @@ export default function Index() {
       <Navbar />
       <div className="z-10 w-full justify-center font-mono text-sm">
         <div className="bg-gradient-to-r h-screen from-purple-500 to-pink-500 relative isolate overflow-hidden bg-gray-900 py-10">
+          <p className="text-lg text-center justify-center tracking-tight text-white">
+            Contact form is currently not functional. Please contact me at my
+            email: <a href="mailto:dmoral1414@gmail.com">dmoral1414@gmail.com</a>
+          </p>
           <h2 className="text-3xl text-center justify-center font-bold tracking-tight text-white sm:text-4xl">
             Contact Me
           </h2>

@@ -47,9 +47,9 @@ export default function Index() {
       web_server: "NGINX",
       hosting: "AWS (Ubuntu instance)",
       image: "",
-      is_weblink: false,
-      weblink: "N/A",
-      repository: "https://github.com/Team-3-CS4311/avert-api",
+      is_weblink: true,
+      weblink: "https://github.com/dmorales22/avert-gui",
+      repository: "https://github.com/dmorales22/avert-api",
       is_repo_weblink: true,
       status: "Finished",
     },
@@ -74,7 +74,7 @@ export default function Index() {
       title: "Autoplanta v2",
       type: "personal",
       description:
-        "There will subscription tier service that will have a free tier, a team tier, and an enterprise tier. It will use a Stripe integration.",
+        "This is a the new version of Autoplanta with new frontend and backend. This is a web application instead of a local hosted website. It will use Node.js as a backend and Next.js as a frontend. A Raspberry Pi with GPIO sensors with a Python script will still be used.",
       backend: "Node.js",
       frontend: "Next.js w/ Chakra UI",
       database: "MongoDB",
@@ -89,12 +89,13 @@ export default function Index() {
     {
       title: "Autoplanta v1",
       type: "personal",
-      description: "This is personal",
-      backend: "Node.js",
-      frontend: "Next.js w/ Chakra UI",
-      database: "MongoDB",
-      web_server: "NGINX",
-      hosting: "AWS (Ubuntu instance)",
+      description:
+        "This is my first major personal project. This project is intended to create a smart grow box that can measure temperature, humidity, and light detection. As well as stream and record within the grow box. I used a Raspberry Pi using a temperature/humidity sensor and light detection sensor using its GPIO interface. I wrote a Python script to read the sensors and write them to a local mySQL database and a CSV file. There is also a USB web cam used to livestream and take periodic pictures. I also create a PHP web interface to view the temperatures/humidity statuses, and view live feed of the grow box as well as the a photo archive. I am currently working on a revamped version using Next.js and Node.js with the Python script.",
+      backend: "Python (Raspberry Pi OS",
+      frontend: "PHP",
+      database: "MySQL",
+      web_server: "",
+      hosting: "Localhost",
       is_weblink: false,
       weblink: "TBA",
       repository: "TBA",
@@ -114,7 +115,9 @@ export default function Index() {
             {content_arr.map((content, index) => (
               <div
                 key={index}
-                className={"w-full m-1 p-2 h-full border-2 rounded-md border-white"}
+                className={
+                  "w-full m-1 p-2 h-full border-2 rounded-md border-white"
+                }
               >
                 <p className="text-xl text-center font-bold md:text-2xl leading-8 text-white px-4 sm:px-4 md:px-8 lg:px-12">
                   {content.title}
