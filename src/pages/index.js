@@ -11,7 +11,7 @@ export default function Home() {
     <main>
       <Navbar />
       <div className="z-10 w-full justify-center font-mono text-sm">
-        <div className="bg-gradient-to-r h-screen from-purple-500 to-pink-500 relative isolate overflow-hidden bg-gray-900 py-12">
+        <div className="bg-gradient-to-r h-full sm:h-screen from-purple-500 to-pink-500 relative isolate overflow-hidden bg-gray-900 py-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-">
               <h2 className="text-3xl text-center justify-center font-bold tracking-tight text-white sm:text-4xl">
