@@ -125,7 +125,7 @@ export default function Index() {
                 <p className="text-md md:text-lg leading-8 text-white p-4">
                   {content.description}
                 </p>
-                <p className="text-lg text-center font-bold">Technologies</p>
+                <p className="text-lg text-center text-white font-bold">Technologies</p>
                 <ol
                   className={
                     "list-disc text-md md:text-lg leading-8 text-white px-4 sm:px-4 md:px-8 lg:px-12"
@@ -137,7 +137,7 @@ export default function Index() {
                   <li>Web Server: {content.web_server}</li>
                   <li>Hosting: {content.hosting}</li>
                 </ol>
-                <p className="text-lg text-center font-bold">Links/Demos</p>
+                <p className="text-lg text-center text-white font-bold">Links/Demos</p>
                 {content.is_repo_weblink ? (
                   <p className="text-md md:text-lg leading-8 text-white px-4 py-1">
                     Repository:{" "}
