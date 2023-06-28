@@ -26,31 +26,31 @@ const Navbar = () => {
                   Home
                 </Link>
                 <Link
-                  href="about-me"
+                  href="/about-me"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   About
                 </Link>
                 <Link
-                  href="projects"
+                  href="/projects"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Projects
                 </Link>
                 <Link
-                  href="services"
+                  href="/services"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Services
                 </Link>
                 <Link
-                  href="contact"
+                  href="/contact"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Contact
                 </Link>
                 <Link
-                  href="blog"
+                  href="/blog"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Blog
@@ -78,97 +78,61 @@ const Navbar = () => {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">
                       <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            href=""
-                            className={classNames(
-                              active
-                                ? "bg-gray text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Home
-                          </Link>
-                        )}
+                        <Link
+                          href="/"
+                          className="text-white
+                              block px-4 py-2 text-lg"
+                        >
+                          Home
+                        </Link>
                       </Menu.Item>
                       <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            href="about-me"
-                            className={classNames(
-                              active
-                                ? "bg-gray text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            About
-                          </Link>
-                        )}
+                        <Link
+                          href="/about-me"
+                          className="text-white
+                              block px-4 py-2 text-lg"
+                        >
+                          About
+                        </Link>
                       </Menu.Item>
                       <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            href="projects"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Projects
-                          </Link>
-                        )}
+                        <Link
+                          href="/projects"
+                          className="text-white
+                              block px-4 py-2 text-lg"
+                        >
+                          Projects
+                        </Link>
                       </Menu.Item>
                       <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            href="services"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Services
-                          </Link>
-                        )}
+                        <Link
+                          href="/services"
+                          className="text-white
+                              block px-4 py-2 text-lg"
+                        >
+                          Services
+                        </Link>
                       </Menu.Item>
                       <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            href="contact"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Contact
-                          </Link>
-                        )}
+                        <Link
+                          href="/contact"
+                          className="text-white
+                              block px-4 py-2 text-lg"
+                        >
+                          Contact
+                        </Link>
                       </Menu.Item>
                       <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            href="blog"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Blog
-                          </Link>
-                        )}
+                        <Link
+                          href="/blog"
+                          className="text-white
+                              block px-4 py-2 text-lg"
+                        >
+                          Blog
+                        </Link>
                       </Menu.Item>
                     </div>
                   </Menu.Items>
