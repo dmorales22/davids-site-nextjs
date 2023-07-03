@@ -1,4 +1,8 @@
 import Navbar from "@/components/Navbar";
+import { useEffect } from "react";
+import { ipGetter } from "../../../utilities/ipgetter";
+import axios from "axios";
+const baseUrl = process.env.NEXT_PUBLIC_BASEURL;
 
 export default function Index() {
   const content_arr = [
@@ -103,6 +107,31 @@ export default function Index() {
       status: "Inactive",
     },
   ];
+
+  useEffect(() => {
+    async function logInteraction() {
+      try {
+        const ip = await ipGetter();
+        const response = await axios.post(
+          //Sends POST request to the server
+          baseUrl + "/api/v1/page-interaction",
+          {
+            interaction_type: "public-page",
+            interaction_descriptor: "page-visit",
+            route: "/projects",
+            origin_type: "site",
+            ipv4: ip.ipv4,
+            ipv6: ip.ipv6,
+          },
+          { withCredentials: true }
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    logInteraction();
+  }, []);
+
   return (
     <main>
       <Navbar />
@@ -125,7 +154,9 @@ export default function Index() {
                 <p className="text-md md:text-lg leading-8 text-white p-4">
                   {content.description}
                 </p>
-                <p className="text-lg text-center text-white font-bold">Technologies</p>
+                <p className="text-lg text-center text-white font-bold">
+                  Technologies
+                </p>
                 <ol
                   className={
                     "list-disc text-md md:text-lg leading-8 text-white px-4 sm:px-4 md:px-8 lg:px-12"
@@ -137,7 +168,9 @@ export default function Index() {
                   <li>Web Server: {content.web_server}</li>
                   <li>Hosting: {content.hosting}</li>
                 </ol>
-                <p className="text-lg text-center text-white font-bold">Links/Demos</p>
+                <p className="text-lg text-center text-white font-bold">
+                  Links/Demos
+                </p>
                 {content.is_repo_weblink ? (
                   <p className="text-md md:text-lg leading-8 text-white px-4 py-1">
                     Repository:{" "}

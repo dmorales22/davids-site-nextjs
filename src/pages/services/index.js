@@ -1,39 +1,68 @@
 import Navbar from "@/components/Navbar";
-const content_arr = [
-  {
-    title: "Freelance React JS UX/UI Design",
-    description:
-      "I offer React JS UX/UI design and implementation. I can create responsive, quick-loading, user-friendly, accessible, and maintainable UI for a wide variety of use cases and projects. Whether you need a responsive and dynamic form, or a interactive dashboard that need to display real-time information.",
-    pricing: "$30hr",
-    status: "Active",
-  },
-  {
-    title: "Freelance Backend Design and Implementation (Node.js and Python)",
-    description:
-      "I offer backend design and implementation. I proficient in creating fast and secure backend systems. I can design and implement databases in both relational and document-oriented structures (NoSQL and SQL).",
-    pricing: "$40hr",
-    status: "Active",
-  },
-  {
-    title: "Requirement Engineering and Documentation",
-    description: "",
-    pricing: "$35hr",
-    status: "Active",
-  },
-  {
-    title: "Server Management",
-    description: "",
-    pricing: "Ask for pricing.",
-    status: "Active",
-  },
-  {
-    title: "Pentesting",
-    description: "",
-    pricing: "$25hr",
-    status: "Active",
-  },
-];
+import { useEffect } from "react";
+import { ipGetter } from "../../../utilities/ipgetter";
+import axios from "axios";
+const baseUrl = process.env.NEXT_PUBLIC_BASEURL;
 export default function Index() {
+  const content_arr = [
+    {
+      title: "Freelance React JS UX/UI Design",
+      description:
+        "I offer React JS UX/UI design and implementation. I can create responsive, quick-loading, user-friendly, accessible, and maintainable UI for a wide variety of use cases and projects. Whether you need a responsive and dynamic form, or a interactive dashboard that need to display real-time information.",
+      pricing: "$30hr",
+      status: "Active",
+    },
+    {
+      title: "Freelance Backend Design and Implementation (Node.js and Python)",
+      description:
+        "I offer backend design and implementation. I proficient in creating fast and secure backend systems. I can design and implement databases in both relational and document-oriented structures (NoSQL and SQL).",
+      pricing: "$40hr",
+      status: "Active",
+    },
+    {
+      title: "Requirement Engineering and Documentation",
+      description: "",
+      pricing: "$35hr",
+      status: "Active",
+    },
+    {
+      title: "Server Management",
+      description: "",
+      pricing: "Ask for pricing.",
+      status: "Active",
+    },
+    {
+      title: "Pentesting",
+      description: "",
+      pricing: "$25hr",
+      status: "Active",
+    },
+  ];
+
+  useEffect(() => {
+    async function logInteraction() {
+      try {
+        const ip = await ipGetter();
+        const response = await axios.post(
+          //Sends POST request to the server
+          baseUrl + "/api/v1/page-interaction",
+          {
+            interaction_type: "public-page",
+            interaction_descriptor: "page-visit",
+            route: "/services",
+            origin_type: "site",
+            ipv4: ip.ipv4,
+            ipv6: ip.ipv6,
+          },
+          { withCredentials: true }
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    logInteraction();
+  }, []);
+
   return (
     <main>
       <Navbar />

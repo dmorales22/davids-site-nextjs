@@ -1,4 +1,9 @@
 import Navbar from "@/components/Navbar";
+import { useEffect } from "react";
+import { ipGetter } from "../../utilities/ipgetter";
+import { useRouter } from "next/router";
+import axios from "axios";
+const baseUrl = process.env.NEXT_PUBLIC_BASEURL;
 
 export default function Home() {
   const links = [
@@ -7,6 +12,30 @@ export default function Home() {
     { name: "My projects", href: "projects" },
     { name: "My blog :)", href: "blog" },
   ];
+  useEffect(() => {
+    async function logInteraction() {
+      try {
+        const ip = await ipGetter();
+        const response = await axios.post(
+          //Sends POST request to the server
+          baseUrl + "/api/v1/page-interaction",
+          {
+            interaction_type: "public-page",
+            interaction_descriptor: "page-visit",
+            route: "/",
+            origin_type: "site",
+            ipv4: ip.ipv4,
+            ipv6: ip.ipv6,
+          },
+          { withCredentials: true }
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    logInteraction();
+  }, []);
+
   return (
     <main>
       <Navbar />
@@ -34,10 +63,10 @@ export default function Home() {
             <p className={"flex justify-center text-white text-xl"}>Resume</p>
             <div className={"flex justify-center"}>
               <iframe
-                  src="https://drive.google.com/file/d/1LSROYqEduFxtg1PHbg3NXfO7OIIdWtxa/preview"
-                  width="auto"
-                  height="400px"
-                  allow="autoplay"
+                src="https://drive.google.com/file/d/1LSROYqEduFxtg1PHbg3NXfO7OIIdWtxa/preview"
+                width="auto"
+                height="400px"
+                allow="autoplay"
               ></iframe>
             </div>
             <div className="p-2 mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
