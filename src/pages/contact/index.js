@@ -102,6 +102,7 @@ export default function Index() {
               </p>
               <input
                 required
+                aria-label="email-input"
                 name={"email"}
                 value={inputs.email}
                 onChange={handleInputs}
@@ -113,6 +114,7 @@ export default function Index() {
               </p>
               <input
                 required
+                aria-label="subject-input"
                 name={"subject"}
                 value={inputs.subject}
                 onChange={handleInputs}
@@ -123,6 +125,7 @@ export default function Index() {
               </p>
               <textarea
                 required
+                aria-label="message-input"
                 name={"content"}
                 value={inputs.content}
                 onChange={handleInputs}
@@ -135,6 +138,7 @@ export default function Index() {
                 <button
                   className="bg-white text-lg rounded-lg text-black p-2 m-2 w-[120px] hover:bg-sky-700"
                   type={"submit"}
+                  aria-label="submit-button"
                 >
                   Submit!
                 </button>

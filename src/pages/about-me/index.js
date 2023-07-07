@@ -5,6 +5,44 @@ import axios from "axios";
 const baseUrl = process.env.NEXT_PUBLIC_BASEURL;
 
 export default function Index() {
+  const programmingLanguages = [
+    "JavaScript",
+    "React JS",
+    "Node.js",
+    "Next.js",
+    "Python",
+    "Java",
+    "C",
+    "Bash",
+    "Scala",
+    "PHP",
+  ];
+  const technicalSkills = [
+    "Database Design and Management (NoSQl and SQL)",
+    "MongoDB, Mongoose, mySQL, SQLite, MariaDB, CouchDB",
+    "NGINX & Apache",
+    "SCRUM and Agile Development",
+    "REST API Development",
+    "Fullstack Developer",
+    "Linux Server Management",
+    "Algorithms and Data Structures",
+    "Cyber Security, Pentesting, and Computer Security",
+    "Cloud Services (AWS, Linode, Azure)",
+    "Requirements Engineering",
+    "Git Version Control",
+    "Computer Networking and Network Protocols",
+    "Advanced Linux usage (Debian, Ubuntu, Arch, Mint)",
+  ];
+  const workHistory = [
+    "Tri-State Electric - Telecommunications & Fiber Optics (2020-2021)",
+    "innovativeManage, Inc - Software Engineer Intern (2021-2022)",
+    "innovativeManage, Inc - Software Engineer (2022-)",
+  ];
+
+  const bio =
+    "I am a software engineer that specializes in web development, computer security, and server management. I graduated from the University of Texas at El Paso (UTEP) in 2021 with BS in Computer Science with a concentration in Secure Cyber Systems.";
+  const bioFollowUp =
+    "I currently work at a software start up called innovativeManage, Inc. Which specializes in property management software for the multi-family rental industry.";
   useEffect(() => {
     async function logInteraction() {
       try {
@@ -41,23 +79,19 @@ export default function Index() {
             <img
               className={"rounded-full w-24 md:w-32 lg:w-48"}
               src={"images/1649098743702.jpg"}
+              alt="a picture of david"
             />
           </div>
-          <p className="mt-2 font-bold text-lg text-center leading-4 text-white px-4 sm:px-4 md:px-8 lg:px-12">
+          <p className="mt-2 font-bold text-xl text-center leading-4 text-white px-4 sm:px-4 md:px-8 lg:px-12">
             Bio
           </p>
-          <p className="mt-6 text-md md:text-lg text-center leading-8 text-white px-4 sm:px-4 md:px-8 lg:px-12">
-            I am a software engineer that specializes in web development,
-            computer security, and server management. I graduated from the
-            University of Texas at El Paso (UTEP) in 2021 with BS in Computer
-            Science with a concentration in Secure Cyber Systems.
+          <p className="mt-6 text-md lg:text-lg text-center leading-8 text-white px-4 sm:px-4 md:px-8 lg:px-12">
+            {bio}
           </p>
           <p className="mt-6 text-md md:text-lg text-center leading-8 text-white px-4 sm:px-4 md:px-8 lg:px-12">
-            I currently work at a software start up called innovativeManage,
-            Inc. Which specializes in property management software for the
-            multi-family rental industry.
+            {bioFollowUp}
           </p>
-          <p className="mt-6 font-bold text-lg text-center leading-8 text-white px-4 sm:px-4 md:px-8 lg:px-12">
+          <p className="mt-6 font-bold text-xl text-center leading-8 text-white px-4 sm:px-4 md:px-8 lg:px-12">
             My Knowledge
           </p>
           <div className="flex flex-wrap px-4 justify-center">
@@ -74,16 +108,9 @@ export default function Index() {
                   "list-disc text-md md:text-lg leading-8 text-white px-4 sm:px-4 md:px-8 lg:px-12"
                 }
               >
-                <li>JavaScript</li>
-                <li>React JS</li>
-                <li>Node.js</li>
-                <li>Next.js</li>
-                <li>Python</li>
-                <li>Java</li>
-                <li>C</li>
-                <li>Bash</li>
-                <li>Scala</li>
-                <li>PHP</li>
+                {programmingLanguages.map((text) => (
+                  <li key={text}>{text}</li>
+                ))}
               </ol>
             </div>
             <div
@@ -99,20 +126,9 @@ export default function Index() {
                   "list-disc text-md md:text-lg leading-8 text-white px-4 sm:px-4 md:px-8 lg:px-12"
                 }
               >
-                <li>Database Design and Management (NoSQl and SQL)</li>
-                <li>MongoDB, Mongoose, mySQL, SQLite, MariaDB, CouchDB</li>
-                <li>NGINX & Apache</li>
-                <li>SCRUM and Agile Development</li>
-                <li>REST API Development</li>
-                <li>Fullstack Developer</li>
-                <li>Linux Server Management</li>
-                <li>Algorithms and Data Structures</li>
-                <li>Cyber Security, Pentesting, and Computer Security</li>
-                <li>Cloud Services (AWS, Linode, Azure)</li>
-                <li>Requirements Engineering</li>
-                <li>Git Version Control</li>
-                <li>Computer Networking and Network Protocols</li>
-                <li>Advanced Linux usage (Debian, Ubuntu, Arch, Mint)</li>
+                {technicalSkills.map((text) => (
+                  <li key={text}>{text}</li>
+                ))}
               </ol>
             </div>
             <div
@@ -128,14 +144,9 @@ export default function Index() {
                   "list-disc text-md md:text-lg leading-8 text-white px-4 sm:px-4 md:px-8 lg:px-12"
                 }
               >
-                <li>
-                  Tri-State Electric - Telecommunications & Fiber Optics
-                  (2020-2021)
-                </li>
-                <li>
-                  innovativeManage, Inc - Software Engineer Intern (2021-2022)
-                </li>
-                <li>innovativeManage, Inc - Software Engineer (2022-)</li>
+                {workHistory.map((text) => (
+                  <li key={text}>{text}</li>
+                ))}
               </ol>
             </div>
           </div>

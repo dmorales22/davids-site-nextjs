@@ -8,7 +8,7 @@ function classNames(...classes) {
 }
 const Navbar = () => {
   return (
-    <nav className="bg-gray-800">
+    <nav className="bg-gray-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -61,7 +61,10 @@ const Navbar = () => {
                 className="absolute right-5 top-3 space-x-reverse inline-block visible md:invisible"
               >
                 <div>
-                  <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray px-5 py-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white">
+                  <Menu.Button
+                    aria-label={"menu-button"}
+                    className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray px-5 py-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white"
+                  >
                     <Bars3Icon
                       className="-mr-1 h-5 w-5 text-gray-400"
                       aria-hidden="true"
